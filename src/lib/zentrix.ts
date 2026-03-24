@@ -45,9 +45,10 @@ function tokenize(code: string): Token[] {
   let match;
   while ((match = re.exec(code)) !== null) {
     const groups = match.groups!;
-    for (const [kind, val] of Object.entries(groups)) {
-      if (val === undefined) continue;
+    for (const [kind, rawVal] of Object.entries(groups)) {
+      if (rawVal === undefined) continue;
       if (kind === 'SKIP' || kind === 'COMMENT') break;
+      const val = rawVal as string;
       let value: string | number | boolean = val;
       if (kind === 'NUMBER') {
         value = val.includes('.') ? parseFloat(val) : parseInt(val, 10);

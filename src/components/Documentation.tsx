@@ -1,3 +1,18 @@
+import { HighlightedCode } from "./SyntaxHighlight";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+
+const TILE_COLORS = [
+  "border-l-4 border-l-emerald-500",
+  "border-l-4 border-l-cyan-400",
+  "border-l-4 border-l-violet-500",
+  "border-l-4 border-l-amber-400",
+  "border-l-4 border-l-rose-500",
+  "border-l-4 border-l-blue-400",
+  "border-l-4 border-l-pink-500",
+  "border-l-4 border-l-teal-400",
+  "border-l-4 border-l-orange-400",
+];
+
 const docs = [
   {
     title: "Variables",
@@ -46,31 +61,46 @@ const docs = [
   },
 ];
 
+const DocTile = ({ doc, index }: { doc: typeof docs[0]; index: number }) => {
+  const { ref, isVisible } = useScrollAnimation(0.1);
+  return (
+    <div
+      ref={ref}
+      className={`rounded-xl border border-border bg-card p-6 hover:border-primary/40 transition-all duration-500 group ${TILE_COLORS[index % TILE_COLORS.length]} ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      }`}
+      style={{ transitionDelay: `${index * 60}ms` }}
+    >
+      <h3 className="text-lg font-display font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">
+        {doc.title}
+      </h3>
+      <p className="text-sm text-muted-foreground mb-4">{doc.desc}</p>
+      <HighlightedCode code={doc.code} />
+    </div>
+  );
+};
+
 const Documentation = () => {
+  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
+
   return (
     <section id="docs" className="py-24 px-4">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-display font-bold text-center mb-2 gradient-text">
-          Documentation
-        </h2>
-        <p className="text-center text-muted-foreground mb-12">
-          Everything you need to start writing Zentrix code
-        </p>
+        <div
+          ref={headerRef}
+          className={`transition-all duration-700 ${headerVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+        >
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-center mb-2 gradient-text">
+            Documentation
+          </h2>
+          <p className="text-center text-muted-foreground mb-12">
+            Everything you need to start writing Zentrix code
+          </p>
+        </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {docs.map((doc) => (
-            <div
-              key={doc.title}
-              className="rounded-xl border border-border bg-card p-6 hover:border-primary/40 transition-colors group"
-            >
-              <h3 className="text-lg font-display font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">
-                {doc.title}
-              </h3>
-              <p className="text-sm text-muted-foreground mb-4">{doc.desc}</p>
-              <pre className="rounded-lg bg-code-bg p-4 font-mono text-xs text-muted-foreground overflow-x-auto">
-                {doc.code}
-              </pre>
-            </div>
+          {docs.map((doc, i) => (
+            <DocTile key={doc.title} doc={doc} index={i} />
           ))}
         </div>
       </div>

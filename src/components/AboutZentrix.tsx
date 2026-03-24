@@ -101,9 +101,17 @@ const AboutZentrix = () => {
               >
                 Gaurav Pandey
               </a>
-              <p className="text-[10px] text-muted-foreground mt-1">
+              <p className="text-[10px] text-muted-foreground mt-1 mb-4">
                 Built with ❤️ as a learning project
               </p>
+              <a
+                href="https://github.com/Coder-Gaurav997"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-semibold hover:opacity-90 transition-opacity"
+              >
+                See Zentrix's Repo
+              </a>
             </div>
           </div>
         </div>

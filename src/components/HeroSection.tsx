@@ -36,12 +36,20 @@ const HeroSection = () => {
         <div className="flex gap-4 justify-center">
           <a
             href="#playground"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById("playground")?.scrollIntoView({ behavior: "smooth" });
+            }}
             className="px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity"
           >
             Try Playground
           </a>
           <a
             href="#docs"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById("docs")?.scrollIntoView({ behavior: "smooth" });
+            }}
             className="px-6 py-3 rounded-lg border border-border text-foreground hover:bg-secondary transition-colors"
           >
             Documentation

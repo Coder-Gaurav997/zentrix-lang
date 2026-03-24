@@ -1,16 +1,26 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import HeroSection from "@/components/HeroSection";
+import Playground from "@/components/Playground";
+import Documentation from "@/components/Documentation";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
+    <main className="min-h-screen">
+      <HeroSection />
+      <Playground />
+      <Documentation />
+      <footer className="py-8 text-center text-sm text-muted-foreground border-t border-border">
+        ZENTRIX v1.0 — Built with ❤️ by{" "}
+        <a
+          href="https://github.com/Coder-Gaurav997"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:underline"
+        >
+          Gaurav Pandey
+        </a>
+      </footer>
+    </main>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;

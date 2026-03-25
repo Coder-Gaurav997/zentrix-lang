@@ -34,7 +34,7 @@ const AboutZentrix = () => {
           {/* Modal */}
           <div
             onClick={(e) => e.stopPropagation()}
-            className="relative z-10 w-full max-w-lg rounded-2xl border border-border bg-card p-8 shadow-2xl animate-scale-in"
+            className="relative z-10 w-full max-w-lg max-h-[90vh] overflow-y-auto rounded-2xl border border-border bg-card p-6 shadow-2xl animate-scale-in"
           >
             <button
               onClick={() => setOpen(false)}

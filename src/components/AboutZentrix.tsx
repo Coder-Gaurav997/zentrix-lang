@@ -92,7 +92,7 @@ const AboutZentrix = () => {
             <div className="text-center pt-4 border-t border-border">
               <p className="text-xs text-muted-foreground mb-1">Created by</p>
               <a
-                href="https://github.com/Coder-Gaurav997"
+                href="https://github.com/Coder-Gaurav997/Zentrix-Programming-Langauge"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm font-display font-semibold text-primary hover:underline underline-offset-4"
@@ -103,7 +103,7 @@ const AboutZentrix = () => {
                 Built with ❤️ as a learning project
               </p>
               <a
-                href="https://github.com/Coder-Gaurav997"
+                href="https://github.com/Coder-Gaurav997/Zentrix-Programming-Langauge"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-semibold hover:opacity-90 transition-opacity"

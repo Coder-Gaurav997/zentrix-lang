@@ -1,6 +1,6 @@
 import { Sun, Moon } from "lucide-react";
-import { useTheme } from "./ThemeProvider";
-import AboutZentrix from "./AboutZentrix";
+import { useTheme } from "@/components/ThemeProvider";
+import AboutZentrix from "@/components/AboutZentrix";
 import HeroSection from "@/components/HeroSection";
 import Playground from "@/components/Playground";
 import Documentation from "@/components/Documentation";

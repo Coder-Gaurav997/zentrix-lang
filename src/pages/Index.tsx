@@ -1,12 +1,12 @@
+import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import Playground from "@/components/Playground";
 import Documentation from "@/components/Documentation";
-import AboutZentrix from "@/components/AboutZentrix";
 
 const Index = () => {
   return (
     <main className="min-h-screen">
-      <AboutZentrix />
+      <Navbar />
       <HeroSection />
       <Playground />
       <Documentation />

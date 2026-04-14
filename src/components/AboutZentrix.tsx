@@ -17,10 +17,10 @@ const AboutZentrix = () => {
     <>
       <button
         onClick={() => setOpen(true)}
-        className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/50 transition-colors"
+        className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card/80 backdrop-blur-sm text-sm font-display font-medium text-muted-foreground hover:text-foreground hover:border-primary/40 transition-all shadow-md"
       >
         <Info className="w-4 h-4" />
-        <span className="hidden sm:inline">About</span>
+        About
       </button>
 
       {open && (

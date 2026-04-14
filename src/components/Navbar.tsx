@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Sun, Moon, Terminal } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
-
+import AboutZentrix from "./AboutZentrix";
 const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
@@ -52,7 +52,10 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Theme toggle */}
+        <div className="flex items-center gap-1">
+          <AboutZentrix />
+
+          {/* Theme toggle */}
         <button
           onClick={toggleTheme}
           className="relative w-9 h-9 flex items-center justify-center rounded-lg border border-border bg-secondary/50 text-muted-foreground hover:text-foreground hover:border-primary/40 transition-all"
@@ -64,7 +67,7 @@ const Navbar = () => {
             <Moon className="w-4 h-4" />
           )}
         </button>
-      </div>
+        </div>
     </nav>
   );
 };

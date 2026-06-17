@@ -2,15 +2,15 @@ import { HighlightedCode } from "./SyntaxHighlight";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const TILE_COLORS = [
-  "border-l-4 border-l-emerald-400",
-  "border-l-4 border-l-teal-400",
-  "border-l-4 border-l-green-400",
-  "border-l-4 border-l-cyan-400",
-  "border-l-4 border-l-emerald-300",
-  "border-l-4 border-l-lime-400",
-  "border-l-4 border-l-teal-300",
   "border-l-4 border-l-emerald-500",
-  "border-l-4 border-l-cyan-300",
+  "border-l-4 border-l-cyan-400",
+  "border-l-4 border-l-violet-500",
+  "border-l-4 border-l-amber-400",
+  "border-l-4 border-l-rose-500",
+  "border-l-4 border-l-blue-400",
+  "border-l-4 border-l-pink-500",
+  "border-l-4 border-l-teal-400",
+  "border-l-4 border-l-orange-400",
 ];
 
 const docs = [
